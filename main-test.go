@@ -1,0 +1,43 @@
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+)
+
+func main() {
+	dictionary()
+	checkAnagram(map[string][]string{})
+
+}
+
+func dictionary() {
+	dictionary := map[string][]string{
+		"frstWrd": {"abba"},
+		"scndWrd": {"baab"},
+		"thrdWrd": {"biba"},
+		"frthWrd": {"boba"},
+	}
+	bs, _ := json.Marshal(dictionary["frstWrd"])
+	fmt.Println(string(bs))
+
+}
+func checkAnagram(dictionary map[string][]string) {
+	hash := make(map[string]int)
+	for _, r := range dictionary["frstWrd"] {
+		j := hash[string(r)]
+		if j == 0 {
+			hash[string(r)] = 1
+		} else {
+			hash[string(r)] = j + 1
+		}
+	}
+	for _, r := range dictionary["scndWrd"] {
+		j := hash[string(r)]
+		if j == 0 {
+			hash[string(r)] = 1
+		} else {
+			hash[string(r)] = j + 1
+		}
+	}
+}
