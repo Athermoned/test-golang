@@ -48,9 +48,9 @@ func checkAnagram(dictionary map[string][]string) {
 		}
 	}
 	if checkBool {
-		fmt.Println("Эти строки не анаграмы")
+		fmt.Println("Эти строки не анаграммы")
 	} else {
-		fmt.Println("Эти строки не анаграмы")
+		fmt.Println("Эти строки не анаграммы")
 	}
 }
 
