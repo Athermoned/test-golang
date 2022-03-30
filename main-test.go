@@ -40,4 +40,17 @@ func checkAnagram(dictionary map[string][]string) {
 			hash[string(r)] = j + 1
 		}
 	}
+	var checkBool bool = true
+	for _, value := range hash {
+		if value%2 != 0 {
+			checkBool = false
+			break
+		}
+	}
+	if checkBool {
+		fmt.Println("Эти строки не анаграмы")
+	} else {
+		fmt.Println("Эти строки не анаграмы")
+	}
 }
+
