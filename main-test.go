@@ -1,25 +1,26 @@
 package main
 
 import (
-	"encoding/json"
+	/* "encoding/json" */
 	"fmt"
 )
 
 func main() {
-	dictionary()
-	checkAnagram(map[string][]string{})
+	dct := dictionary()
+	checkAnagram(dct)
 
 }
 
-func dictionary() {
+func dictionary() map[string][]string {
 	dictionary := map[string][]string{
 		"frstWrd": {"abba"},
 		"scndWrd": {"baab"},
 		"thrdWrd": {"biba"},
 		"frthWrd": {"boba"},
 	}
-	bs, _ := json.Marshal(dictionary["frstWrd"])
-	fmt.Println(string(bs))
+	/* bs, _ := json.Marshal(dictionary["frstWrd"])
+	fmt.Println(string(bs)) */
+	return dictionary
 
 }
 func checkAnagram(dictionary map[string][]string) {
@@ -48,9 +49,8 @@ func checkAnagram(dictionary map[string][]string) {
 		}
 	}
 	if checkBool {
-		fmt.Println("Эти строки не анаграммы")
+		fmt.Println("Эти строки анаграмы")
 	} else {
-		fmt.Println("Эти строки не анаграммы")
+		fmt.Println("Эти строки не анаграмы")
 	}
 }
-
