@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+    name: golang-http-deployment
+    labels: 
+       app: golang-http
+spec:
+  selector:
+    matchLabels: 
+      app: golang-http
+  template: 
+    metadata:
+      labels: 
+       app: golang-http
+    spec: 
+     containers: 
+     - name: golang-http
+       image: athium/golang-anagrams:v1.0
+       ports: 
+       - containerPort: 8080
